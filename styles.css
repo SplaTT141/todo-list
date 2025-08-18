@@ -12,14 +12,15 @@ body {
   margin-top: 5rem;
 }
 
-.cards {
-  display: flex;
+.notes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   margin: 5rem;
 }
 
 .add {
-  width: 300px;
+  width: 100%;
   height: 200px;
   background: rgba(255, 255, 255, 0.453);
   border-radius: 16px;
@@ -30,6 +31,7 @@ body {
   font-size: 50px;
   color: rgba(89, 90, 91, 0.792);
   transition: all 0.2s;
+  user-select: none;
 }
 
 .add:hover {
@@ -39,7 +41,8 @@ body {
 }
 
 .note textarea {
-  width: 300px;
+  display: block;
+  width: 100%;
   height: 200px;
   resize: none;
   outline: none;
@@ -54,7 +57,31 @@ body {
 }
 
 .note textarea:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
   box-shadow: 3px 3px 10px #0000006c;
   background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 1670px) {
+  .notes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1380px) {
+  .notes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1080px) {
+  .notes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 778px) {
+  .notes {
+    grid-template-columns: 1fr;
+  }
 }
