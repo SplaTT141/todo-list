@@ -20,8 +20,10 @@ body {
 }
 
 .add {
-  width: 100%;
-  height: 200px;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 3rem;
   background: rgba(255, 255, 255, 0.453);
   border-radius: 16px;
   border: 0.5px solid rgba(255, 255, 255, 0.67);
@@ -32,12 +34,33 @@ body {
   color: rgba(89, 90, 91, 0.792);
   transition: all 0.2s;
   user-select: none;
+  position: relative;
 }
 
 .add:hover {
   transform: scale(1.03);
   background-color: rgba(255, 255, 255, 0.732);
   cursor: pointer;
+}
+
+.add .note-counter {
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  padding: 5px;
+  background: linear-gradient(to left, #56e460, #52ebd9);
+  border-radius: 10px;
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0);
+  border: 0.5px solid rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.note {
+  position: relative;
 }
 
 .note textarea {
@@ -57,9 +80,13 @@ body {
 }
 
 .note textarea:hover {
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
   box-shadow: 3px 3px 10px #0000006c;
   background-color: rgb(255, 255, 255);
+}
+
+.disable {
+  display: none;
 }
 
 @media (max-width: 1670px) {
@@ -84,4 +111,49 @@ body {
   .notes {
     grid-template-columns: 1fr;
   }
+}
+
+.note .remove {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  justify-content: center;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  background: #ffffffce;
+  backdrop-filter: blur(2px);
+  width: 100%;
+  border: 0.5px solid rgba(115, 115, 115, 0.341);
+}
+
+.note .remove .confirm,
+.note .remove .cancel {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.7rem;
+  border-radius: 5px;
+  background-color: orangered;
+  transition: all 0.2s;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+}
+
+.note .remove .cancel {
+  background-color: rgb(255, 255, 255);
+  color: #000;
+}
+
+.note .remove .confirm:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgb(0, 0, 0);
+  transform: scale(1.01);
+}
+
+.note .remove .cancel:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgb(0, 0, 0);
+  transform: scale(1.01);
 }
