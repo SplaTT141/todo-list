@@ -17,7 +17,6 @@ addDOM.addEventListener('click', () => {
     notesCountDOM.textContent = notesDOM.children.length
 });
 
-
 notesDOM.addEventListener('dblclick', e => {
     const note = e.target.closest('.note');
     const remove = note.querySelector('.remove')
@@ -37,4 +36,11 @@ notesDOM.addEventListener('dblclick', e => {
             remove.classList.remove('enable');
         })
     }
+
+    function timeOut() {
+        remove.classList.remove('enable');
+    }
+
+    setTimeout(timeOut, 3000)
+
 })
