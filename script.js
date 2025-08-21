@@ -7,6 +7,7 @@ addDOM.addEventListener('click', () => {
         <div class="note">
             <textarea name="note" placeholder="Empty note"></textarea>
             <div class="remove">
+                <span>Are you sure?</span>
                 <button class="confirm" type="button">Confirm</button>
                 <button class="cancel" type="button">Cancel</button>
             </div>
