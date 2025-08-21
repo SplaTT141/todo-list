@@ -114,6 +114,10 @@ body {
 }
 
 .note .remove {
+  display: none;
+}
+
+.note .remove.enable {
   display: flex;
   gap: 1rem;
   position: absolute;
@@ -127,8 +131,8 @@ body {
   border: 0.5px solid rgba(115, 115, 115, 0.341);
 }
 
-.note .remove .confirm,
-.note .remove .cancel {
+.note .remove.enable .confirm,
+.note .remove.enable .cancel {
   display: flex;
   align-items: center;
   padding: 0.2rem 0.7rem;
@@ -141,18 +145,18 @@ body {
   border: none;
 }
 
-.note .remove .cancel {
+.note .remove.enable .cancel {
   background-color: rgb(255, 255, 255);
   color: #000;
 }
 
-.note .remove .confirm:hover {
+.note .remove.enable .confirm:hover {
   cursor: pointer;
   box-shadow: 1px 1px 3px rgb(0, 0, 0);
   transform: scale(1.01);
 }
 
-.note .remove .cancel:hover {
+.note .remove.enable .cancel:hover {
   cursor: pointer;
   box-shadow: 1px 1px 3px rgb(0, 0, 0);
   transform: scale(1.01);
